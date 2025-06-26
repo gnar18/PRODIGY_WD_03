@@ -1,0 +1,154 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  animation: fadeIn 1.2s ease;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  color: #00eaff;
+}
+
+.name-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.name-inputs input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+.name-inputs button {
+  padding: 10px;
+  font-size: 1rem;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+#status {
+  font-size: 1.2rem;
+  margin: 15px 0;
+  color: #f1f1f1;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: #1f1f1f;
+  border-radius: 12px;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}
+
+.cell:hover {
+  background: #292929;
+  animation: shimmer 1s linear infinite;
+}
+
+.cell.X {
+  color: #ff6b81;
+  animation: popIn 0.4s ease;
+}
+
+.cell.O {
+  color: #1dd1a1;
+  animation: popIn 0.4s ease;
+}
+
+.winning-cell {
+  background: #2ecc71 !important;
+  animation: blink 1s infinite;
+}
+
+#scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+#resetBtn {
+  padding: 10px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff416c;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#resetBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff416c;
+}
+
+/* Animations */
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200px; }
+  100% { background-position: 200px; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.slide-in {
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

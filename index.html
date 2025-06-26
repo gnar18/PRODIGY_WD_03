@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animated Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="name-inputs">
+      <input type="text" id="playerX" placeholder="Player X Name" />
+      <input type="text" id="playerO" placeholder="Player O Name" />
+      <button id="startBtn">Start Game</button>
+    </div>
+
+    <div class="game-area hidden">
+      <h1 class="slide-in">✨ Tic Tac Toe ✨</h1>
+      <div id="status">Waiting...</div>
+      <div class="board slide-in" id="board"></div>
+      <div id="scoreboard">
+        <p id="scoreX">X: 0</p>
+        <p id="scoreO">O: 0</p>
+      </div>
+      <button id="resetBtn">🔁 Restart</button>
+    </div>
+  </div>
+
+  <!-- Sound files (Ensure they exist in the same folder) -->
+  <audio id="clickSound" src="click.mp3"></audio>
+  <audio id="winSound" src="win.mp3"></audio>
+  <audio id="bgMusic" src="background.mp3" autoplay loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
